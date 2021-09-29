@@ -13,12 +13,30 @@
 (function() {
     'use strict';
 
-    const main = (elems) => {
+    const highlightHeader = (elems) => {
         if (location.hostname.toString().includes('my343942')) {
             elems[0].style.backgroundColor = 'aqua';
         } else if (location.hostname.toString().includes('my350201')) {
             elems[0].style.backgroundColor = 'red';
         }
     }
-    waitForKeyElements('#mainShell-header', main);
+
+    const disableDiscardAllButton = (elems) => {
+        // too lazy to figure out how to prevent the UI from overwriting my changes while the
+        // adaptation UI is loading
+        let bdis = $('footer[class="sapMPageFooter"] bdi')
+        bdis[0].style.color = 'grey'
+        let buttons = $('footer[class="sapMPageFooter"] button')
+        buttons[0].style.pointerEvents = 'none'
+
+        setTimeout(() => {
+            let bdis = $('footer[class="sapMPageFooter"] bdi')
+            bdis[0].style.color = 'grey'
+            let buttons = $('footer[class="sapMPageFooter"] button')
+            buttons[0].style.pointerEvents = 'none'
+        }, 5 * 1000);
+    }
+
+    waitForKeyElements('#mainShell-header', highlightHeader);
+    waitForKeyElements('footer[class="sapMPageFooter"]', disableDiscardAllButton);
 })();
