@@ -1,6 +1,6 @@
 import * as i18next from "i18next";
 
-class C4CLanguageDetector implements i18next.LanguageDetectorModule {
+export class C4CLanguageDetector implements i18next.LanguageDetectorModule {
   type: "languageDetector";
   static type: string = "languageDetector";
 
@@ -19,7 +19,11 @@ i18next.use(C4CLanguageDetector).init({
           individualcustomer: {
             prospect: "Prospect",
             customer: "Customer",
-            idlabel: "Customer Number",
+            idlabel: "Customer ID",
+          },
+          corporateaccount: {
+            customer: "Customer",
+            idlabel: "Account ID",
           },
         },
         contract: {
@@ -32,7 +36,11 @@ i18next.use(C4CLanguageDetector).init({
         customer: {
           individualcustomer: {
             prospect: "Interessent",
-            customer: "Kunde",
+            customer: "Bestandeskunde",
+            idlabel: "Kundennummer",
+          },
+          corporateaccount: {
+            customer: "Bestandeskunde",
             idlabel: "Kundennummer",
           },
         },

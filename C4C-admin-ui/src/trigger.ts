@@ -33,8 +33,8 @@ jQuery.prototype.comments = function (blnDeep: boolean) {
   return jComments;
 };
 
-export default async function trigger(stats: StatsObject, callback: Function) {
-  const newstats: StatsObject = await findPerformanceStats();
+export default async function trigger(stats: StatsRecord, callback: Function) {
+  const newstats: StatsRecord = await findPerformanceStats();
   if (stats === null || newstats["ui-step"] !== stats["ui-step"]) {
     stats = newstats;
     callback(stats);
@@ -42,7 +42,7 @@ export default async function trigger(stats: StatsObject, callback: Function) {
   setTimeout(trigger, 1000, stats, callback);
 }
 
-function findPerformanceStats(): Promise<StatsObject> {
+function findPerformanceStats(): Promise<StatsRecord> {
   return new Promise((resolve) => {
     const checkStats = () => {
       const comments = $("html").comments();
@@ -56,7 +56,7 @@ function findPerformanceStats(): Promise<StatsObject> {
           )
         ) {
           const statsObject = comments[0].innerHTML.match(/\{[^{}]*\}/)[0];
-          const newStats: StatsObject = JSON.parse(statsObject);
+          const newStats: StatsRecord = JSON.parse(statsObject);
 
           if (newStats !== null) {
             resolve(newStats);
