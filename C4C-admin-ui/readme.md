@@ -9,3 +9,11 @@ Template for local userscript dev: https://github.com/Trim21/webpack-userscript-
 -   Generate a link to the API record on C4C entities
 -   Disable discard changes button in adaptation mode
 -   Adds a language switcher
+
+## How to use
+
+Install a userscript manager of your choice in your browser:
+
+https://openuserjs.org/about/Userscript-Beginners-HOWTO
+
+Install the userscript file c4cadminui.user.js from the latest release (simply open the file in the browser).
