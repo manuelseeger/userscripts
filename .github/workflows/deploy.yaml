@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - v*
+    paths:
+      - "C4C-Admin-UI/**"
 
 jobs:
   deploy:
