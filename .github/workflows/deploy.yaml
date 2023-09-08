@@ -28,5 +28,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           fail_on_unmatched_files: true
-          body_path: ${{ github.workspace }}/C4C-admin-ui/README.md
+          body_path: ./C4C-admin-ui/README.md
           files: ./C4C-admin-ui/dist/c4cadminui.user.js
