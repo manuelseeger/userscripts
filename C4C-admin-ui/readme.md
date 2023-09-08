@@ -7,3 +7,5 @@ Template for local userscript dev: https://github.com/Trim21/webpack-userscript-
 ## Features:
 
 -   Generate a link to the API record on C4C entities
+-   Disable discard changes button in adaptation mode
+-   Adds a language switcher
