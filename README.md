@@ -1,1 +1,3 @@
-# userscripts
+# Userscripts
+
+A collection of userscripts
