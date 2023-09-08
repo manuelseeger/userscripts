@@ -26,6 +26,6 @@ jobs:
       - run: npm run build
       - name: Pre-release
         uses: softprops/action-gh-release@v1
+        working-directory: C4C-admin-ui
         with:
-          prerelease: true
           files: ./dist/c4cadminui.user.js
