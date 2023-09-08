@@ -1,5 +1,5 @@
 {
-  "name": "C4C Admin UI",
+  "name": "c4c-admin-ui",
   "description": "A UI for C4C admins and support users",
   "version": "0.0.1",
   "author": {
@@ -22,9 +22,7 @@
   "dependencies": {
     "@trim21/gm-fetch": "^0.1.15",
     "i18next": "^23.5.0",
-    "i18next-browser-languagedetector": "^7.1.0",
-    "jquery": "^3.7.0",
-    "jquery-i18next": "^1.2.1"
+    "jquery": "^3.7.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json}": [
