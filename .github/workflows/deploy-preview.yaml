@@ -3,7 +3,9 @@ name: deploy-preview
 on:
   push:
     branches:
-      - master
+      - main
+    paths:
+      - "C4C-admin-ui/**"
 
 defaults:
   run:
