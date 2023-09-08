@@ -10,7 +10,6 @@ export class ApiLink implements C4CAdminUIPlugin {
       new CorporateAccount(),
       new IndividualCustomer(),
       new Contract(),
-      ,
     ];
 
     const entity = entities.find((e) => e.isme());

@@ -47,7 +47,6 @@ function findPerformanceStats(): Promise<StatsRecord> {
     const checkStats = () => {
       const comments = $("html").comments();
       if (comments.length === 0) {
-        console.log("Will keep looking");
         setTimeout(checkStats, 1000);
       } else {
         if (
