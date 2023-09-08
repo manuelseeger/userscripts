@@ -2,8 +2,8 @@ name: deploy
 
 on:
   push:
-    branches:
-      - v*
+    tags:
+      - "v*.*.*"
     paths:
       - "C4C-admin-ui/**"
 
@@ -12,27 +12,20 @@ defaults:
     working-directory: C4C-admin-ui
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
           cache: "npm"
           cache-dependency-path: "C4C-admin-ui/package-lock.json"
-
       - run: npm ci
       - run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Pre-release
+        uses: softprops/action-gh-release@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          enable_jekyll: true
-          commit_message: deploy ${{ github.ref }}
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
+          prerelease: true
+          files: ./dist/c4cadminui.user.js
