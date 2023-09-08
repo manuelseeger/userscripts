@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    working-directory: C4C-admin-ui
+
 jobs:
   deploy:
     runs-on: ubuntu-latest

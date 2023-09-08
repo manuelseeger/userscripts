@@ -5,7 +5,11 @@ on:
     branches:
       - v*
     paths:
-      - "C4C-Admin-UI/**"
+      - "C4C-admin-ui/**"
+
+defaults:
+  run:
+    working-directory: C4C-admin-ui
 
 jobs:
   deploy:
